@@ -15,6 +15,85 @@ Module Rules
     
 }
 
-nav [role="navigation"] {
+nav[role="navigation"] ul {
     list-style-type: none;
+}
+
+nav[role="navigation"] ul a {
+    border: 1px solid $color;
+    color: $color;
+    display: inline-block;
+    @include fontSize (16px);
+    @include headline-font;
+    margin-left: 8px;
+    padding: 0 4px;
+    text-decoration: none;
+    transition: border 400ms linear;
+    transition: color 400ms linear;
+}
+
+nav[role="navigation"] ul a:hover {
+    border: 1px solid lighten($color, 30%);
+    color: lighten($color, 30%);
+    transition: border 400ms linear;
+    transition: color 400ms linear;
+}
+
+header[role="banner"] {
+    animation: colorchange-font 5s linear 1s infinite alternate;
+    background-color: $color;
+    color: $background-color;
+    padding: 12px; 
+}
+
+header[role="banner"]  h1 {
+    animation: colorchange-font 5s linear 1s infinite alternate;
+    color: $background-color;
+}
+
+.banner-photo {
+    text-align: center;
+}
+
+header[role="banner"]  img {
+    border-radius: 50%; 
+    width: 75%;
+}
+
+header[role="banner"]  p {
+    @include fontSize (23px);
+}
+
+header[role="banner"]  a {
+    color: $background-color;
+    @include body-font-italic;
+    transition: color 400ms linear;
+}
+
+
+header[role="banner"]  a:hover {
+    color: darken($background-color, 12%);
+    transition: color 400ms linear;
+}
+
+.contact svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact svg path {
+    fill: $background-color;
+    transition: fill 400ms linear;
+}
+
+.contact a:hover svg path {
+    fill: darken($background-color, 30%);
+    transition: fill 400ms linear;
+}
+
+main[role="main"] h1 {
+    background-color: $color;
+    color: $background-color;
+    animation: colorchange-font 5s linear 1s infinite alternate;
+    padding: 0 8px;
 }
